@@ -1,7 +1,5 @@
 import React from "react"
-import { MDXProvider } from "@mdx-js/react"
 import Navigation from "./navigation"
-import MdxLink from "./mdxLink"
 
 const LocaleContext = React.createContext()
 
@@ -15,9 +13,7 @@ const Layout = ({ children, pageContext: { locale } }) => (
       <header className="global-header">
         <Navigation />
       </header>
-      <MDXProvider components={{ a: MdxLink }}>
-        <main>{children}</main>
-      </MDXProvider>
+      <main>{children}</main>
     </div>
   </LocaleContext.Provider>
 )
